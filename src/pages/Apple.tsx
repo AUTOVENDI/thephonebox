@@ -1,0 +1,250 @@
+import React, { useEffect, useState } from 'react';
+import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
+
+const Apple = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const products = [
+    {
+      id: 1,
+      name: 'iPhone 15 Pro',
+      price: '$999',
+      image: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Smartphone,
+      description: 'The ultimate iPhone experience with titanium design'
+    },
+    {
+      id: 2,
+      name: 'iPhone 15',
+      price: '$799',
+      image: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Smartphone,
+      description: 'All-new iPhone with USB-C and advanced features'
+    },
+    {
+      id: 3,
+      name: 'iPad Pro',
+      price: '$1,099',
+      image: 'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Tablet,
+      description: 'The most advanced iPad ever with M2 chip'
+    },
+    {
+      id: 4,
+      name: 'AirPods Pro',
+      price: '$249',
+      image: 'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Headphones,
+      description: 'Immersive audio with Active Noise Cancellation'
+    },
+    {
+      id: 5,
+      name: 'MacBook Pro',
+      price: '$1,999',
+      image: 'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Laptop,
+      description: 'Supercharged by M3 Pro and M3 Max chips'
+    },
+    {
+      id: 6,
+      name: 'Apple Watch',
+      price: '$399',
+      image: 'https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Watch,
+      description: 'Your health and fitness companion'
+    }
+  ];
+
+  return (
+    <div className="pt-16 min-h-screen">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-purple-50 via-pink-50 via-white to-orange-50 py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Floating background elements */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-purple-300 to-pink-400 rounded-full opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-orange-300 to-red-400 rounded-full opacity-15 animate-bounce animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full opacity-20 animate-pulse animation-delay-1000"></div>
+        
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left Side - Text Content */}
+            <div className="space-y-8">
+              <h1 
+                className={`text-5xl md:text-7xl font-black text-black transition-all duration-1000 tracking-tight leading-none ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                }`}
+                style={{ 
+                  fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+                  fontWeight: 900,
+                  letterSpacing: '-0.02em'
+                }}
+              >
+                Apple Products
+              </h1>
+              
+              <div 
+                className={`space-y-6 transition-all duration-1000 delay-300 ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+                }`}
+              >
+                <p className="text-xl md:text-2xl bg-gradient-to-r from-gray-600 to-gray-800 bg-clip-text text-transparent leading-relaxed">
+                  Explore premium smartphones with cutting-edge features and innovative design that seamlessly integrates into your digital lifestyle.
+                </p>
+                
+                <div className="space-y-3 text-gray-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse"></div>
+                    <span>Revolutionary A17 Pro chip technology</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full animate-pulse animation-delay-500"></div>
+                    <span>Professional camera systems</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-gradient-to-r from-orange-400 to-red-500 rounded-full animate-pulse animation-delay-1000"></div>
+                    <span>Seamless ecosystem integration</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - 3D Phone Model */}
+            <div className="flex justify-center lg:justify-end">
+              <div 
+                className={`relative transition-all duration-1000 delay-500 ${
+                  isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+                }`}
+              >
+                {/* 3D Phone Container */}
+                <div className="relative w-80 h-80 flex items-center justify-center">
+                  
+                  {/* Floating Elements */}
+                  <div className="absolute top-10 left-10 w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse opacity-60"></div>
+                  <div className="absolute bottom-16 right-8 w-3 h-3 bg-gradient-to-r from-pink-400 to-orange-500 rounded-full animate-pulse opacity-40 animation-delay-1000"></div>
+                  <div className="absolute top-20 right-12 w-2 h-2 bg-gradient-to-r from-orange-400 to-red-500 rounded-full animate-pulse opacity-50 animation-delay-2000"></div>
+                  
+                  {/* Main Phone Model */}
+                  <div className="relative group">
+                    <div 
+                      className="w-48 h-80 bg-gradient-to-b from-gray-800 via-purple-900 to-black rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-700 hover:rotate-y-12"
+                      style={{
+                        animation: 'float 6s ease-in-out infinite, rotateY 8s linear infinite',
+                        transformStyle: 'preserve-3d'
+                      }}
+                    >
+                      {/* Screen */}
+                      <div className="absolute inset-2 bg-gradient-to-b from-purple-900 via-pink-900 to-black rounded-2xl overflow-hidden">
+                        <div className="w-full h-full bg-gradient-to-br from-purple-400 via-pink-500 to-orange-500 opacity-80"></div>
+                        
+                        {/* Dynamic Island */}
+                        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-6 bg-black rounded-full"></div>
+                        
+                        {/* App Icons Simulation */}
+                        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 grid grid-cols-4 gap-2">
+                          {[...Array(8)].map((_, i) => (
+                            <div key={i} className="w-3 h-3 bg-gradient-to-r from-white/30 to-purple-200/30 rounded-sm animate-pulse" style={{animationDelay: `${i * 200}ms`}}></div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Camera Module */}
+                      <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl">
+                        <div className="absolute top-1 left-1 w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse"></div>
+                        <div className="absolute top-1 right-1 w-4 h-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full animate-pulse animation-delay-500"></div>
+                        <div className="absolute bottom-1 left-1 w-4 h-4 bg-gradient-to-r from-pink-600 to-orange-600 rounded-full animate-pulse animation-delay-1000"></div>
+                      </div>
+                      
+                      {/* Side Buttons */}
+                      <div className="absolute left-0 top-16 w-1 h-8 bg-gray-700 rounded-r"></div>
+                      <div className="absolute left-0 top-28 w-1 h-12 bg-gray-700 rounded-r"></div>
+                      <div className="absolute right-0 top-20 w-1 h-16 bg-gray-700 rounded-l"></div>
+                    </div>
+                    
+                    {/* Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-orange-400/30 rounded-3xl blur-xl transform scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Products Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 
+              className={`text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-purple-600 bg-clip-text text-transparent mb-6 transition-all duration-1000 delay-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+            >
+              Our Apple Collection
+            </h2>
+            <p 
+              className={`text-lg text-gray-600 max-w-2xl mx-auto transition-all duration-1000 delay-900 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+            >
+              Discover the complete range of Apple devices designed to work seamlessly together
+            </p>
+          </div>
+
+          {/* Products Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {products.map((product, index) => (
+              <div 
+                key={product.id}
+                className={`group bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden cursor-pointer border border-purple-100/50 hover:border-purple-200 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
+                }`}
+                style={{ transitionDelay: `${1100 + index * 100}ms` }}
+              >
+                <div className="relative h-48 bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-white/90 to-purple-100/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
+                    <product.icon className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse"></div>
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    {product.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-purple-600 bg-clip-text text-transparent">
+                      {product.price}
+                    </span>
+                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Apple;
