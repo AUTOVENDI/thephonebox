@@ -8,7 +8,7 @@ import Samsung from './pages/Samsung';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 via-blue-50 to-cyan-50">
+      <div className="min-h-screen bg-black">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
