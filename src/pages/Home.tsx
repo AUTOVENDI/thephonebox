@@ -66,7 +66,7 @@ const Home = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ 
-              fontFamily: 'Playfair Display, Georgia, serif',
+              fontFamily: 'Poppins, system-ui, -apple-system, sans-serif',
               fontWeight: 700,
               letterSpacing: '-0.01em',
               textShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
