@@ -174,3 +174,45 @@ body {
 .bg-300\% {
   background-size: 300% 300%;
 }
+
+.bg-400\% {
+  background-size: 400% 400%;
+}
+
+.bg-200\% {
+  background-size: 200% 200%;
+}
+
+/* Smooth gradient animation for headings */
+@keyframes gradient-smooth {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 100% 0%;
+  }
+}
+
+.animate-gradient-smooth {
+  animation: gradient-smooth 8s ease-in-out infinite;
+}
+
+/* Shimmer effect for text */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}

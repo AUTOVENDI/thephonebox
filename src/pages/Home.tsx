@@ -66,12 +66,15 @@ const Home = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ 
-              fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
-              fontWeight: 900,
-              letterSpacing: '-0.02em'
+              fontFamily: 'Playfair Display, Georgia, serif',
+              fontWeight: 700,
+              letterSpacing: '-0.01em',
+              textShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
+              filter: 'drop-shadow(0 4px 20px rgba(255, 255, 255, 0.1))'
             }}
           >
-            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent animate-gradient bg-300% drop-shadow-2xl">
+            <span className="bg-gradient-to-r from-white via-gray-50 via-white via-gray-100 to-white bg-clip-text text-transparent animate-gradient-smooth bg-400% relative">
+              <span className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 via-white/20 to-white/20 bg-clip-text text-transparent animate-shimmer bg-200%"></span>
             Welcome to The Phone Box
             </span>
           </h1>
