@@ -50,7 +50,7 @@ body {
 }
 
 /* Custom keyframes for floating animation */
-@keyframes float {
+@keyframes float-3d {
   0%, 100% {
     transform: translateY(0px) rotateY(0deg);
   }
@@ -59,9 +59,32 @@ body {
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.animate-float {
+  animation: float-3d 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
 @keyframes rotateY {
   from {
     transform: rotateY(0deg);
@@ -69,6 +92,68 @@ body {
   to {
     transform: rotateY(360deg);
   }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right 4s ease-in-out infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 4s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
 }
 
 /* Gradient text animation */
@@ -82,6 +167,10 @@ body {
 }
 
 .animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+  background-size: 300% 300%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.bg-300\% {
+  background-size: 300% 300%;
 }
