@@ -134,7 +134,6 @@ const Home = () => {
               </div>
               
               <div className="mt-8 mb-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                   Apple Products
                 </h2>
@@ -204,7 +203,6 @@ const Home = () => {
               </div>
               
               <div className="mt-8 mb-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                   Samsung Products
                 </h2>
