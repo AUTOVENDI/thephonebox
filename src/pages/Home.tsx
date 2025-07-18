@@ -17,14 +17,14 @@ const Home = () => {
     <div className="pt-16 min-h-screen relative overflow-hidden">
       {/* Animated Wave Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black animate-gradient bg-300%"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 animate-gradient bg-300%"></div>
         <div 
           className="absolute top-0 left-0 w-full h-full opacity-40"
           style={{
             background: `
-              radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.12) 0%, transparent 50%)
+              radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(255, 255, 0, 0.12) 0%, transparent 50%)
             `,
             animation: 'gradient-shift 6s ease infinite'
           }}
@@ -32,29 +32,29 @@ const Home = () => {
         
         {/* Moving light streaks */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-slide-right"></div>
-          <div className="absolute top-2/3 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-white/20 to-transparent animate-slide-left animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/25 to-transparent animate-slide-right animation-delay-4000"></div>
+          <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-slide-right"></div>
+          <div className="absolute top-2/3 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-pink-400/20 to-transparent animate-slide-left animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/25 to-transparent animate-slide-right animation-delay-4000"></div>
         </div>
       </div>
 
       {/* Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large floating orbs */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/15 rounded-full blur-xl animate-pulse-slow"></div>
-        <div className="absolute bottom-40 right-20 w-40 h-40 bg-white/10 rounded-full blur-xl animate-float animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-white/12 rounded-full blur-lg animate-pulse-slow animation-delay-1000"></div>
-        <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-white/8 rounded-full blur-lg animate-float animation-delay-3000"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-400/15 rounded-full blur-xl animate-pulse-slow"></div>
+        <div className="absolute bottom-40 right-20 w-40 h-40 bg-purple-400/10 rounded-full blur-xl animate-float animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-pink-400/12 rounded-full blur-lg animate-pulse-slow animation-delay-1000"></div>
+        <div className="absolute top-1/3 right-1/3 w-20 h-20 bg-orange-400/8 rounded-full blur-lg animate-float animation-delay-3000"></div>
         
         {/* Floating phone silhouettes */}
         <div className="absolute top-32 right-32 opacity-10 animate-float-slow">
-          <Smartphone className="w-16 h-16 text-white transform rotate-12 animate-pulse" />
+          <Smartphone className="w-16 h-16 text-cyan-400 transform rotate-12 animate-pulse" />
         </div>
         <div className="absolute bottom-32 left-32 opacity-10 animate-float-slow animation-delay-2000">
-          <Smartphone className="w-12 h-12 text-white transform -rotate-12 animate-pulse animation-delay-1000" />
+          <Smartphone className="w-12 h-12 text-purple-400 transform -rotate-12 animate-pulse animation-delay-1000" />
         </div>
         <div className="absolute top-2/3 right-1/4 opacity-10 animate-float-slow animation-delay-1000">
-          <Smartphone className="w-10 h-10 text-white transform rotate-45 animate-pulse animation-delay-2000" />
+          <Smartphone className="w-10 h-10 text-pink-400 transform rotate-45 animate-pulse animation-delay-2000" />
         </div>
       </div>
 
@@ -66,15 +66,12 @@ const Home = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ 
-              fontFamily: 'Poppins, system-ui, -apple-system, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontWeight: 700,
-              letterSpacing: '-0.01em',
-              textShadow: '0 0 30px rgba(255, 255, 255, 0.3)',
-              filter: 'drop-shadow(0 4px 20px rgba(255, 255, 255, 0.1))'
+              letterSpacing: '-0.01em'
             }}
           >
-            <span className="bg-gradient-to-r from-white via-gray-50 via-white via-gray-100 to-white bg-clip-text text-transparent animate-gradient-smooth bg-400% relative">
-              <span className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/40 via-white/20 to-white/20 bg-clip-text text-transparent animate-shimmer bg-200%"></span>
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-gradient-smooth bg-400%">
             Welcome to The Phone Box
             </span>
           </h1>
@@ -89,15 +86,15 @@ const Home = () => {
           {/* Enhanced decorative elements */}
           <div className="flex justify-center space-x-8 mb-16 flex-wrap gap-4">
             <div className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 group">
-              <div className="w-3 h-3 bg-white rounded-full animate-ping group-hover:animate-bounce"></div>
+              <div className="w-3 h-3 bg-cyan-400 rounded-full animate-ping group-hover:animate-bounce"></div>
               <span className="text-lg">Premium Quality</span>
             </div>
             <div className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 group">
-              <div className="w-3 h-3 bg-white rounded-full animate-ping animation-delay-500 group-hover:animate-bounce"></div>
+              <div className="w-3 h-3 bg-purple-400 rounded-full animate-ping animation-delay-500 group-hover:animate-bounce"></div>
               <span className="text-lg">Latest Technology</span>
             </div>
             <div className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-300 group">
-              <div className="w-3 h-3 bg-white rounded-full animate-ping animation-delay-1000 group-hover:animate-bounce"></div>
+              <div className="w-3 h-3 bg-pink-400 rounded-full animate-ping animation-delay-1000 group-hover:animate-bounce"></div>
               <span className="text-lg">Best Prices</span>
             </div>
           </div>
@@ -114,11 +111,11 @@ const Home = () => {
             style={{ transitionDelay: '600ms' }}
             onClick={() => navigate('/apple')}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-purple-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             {/* Animated border */}
             <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-white/20 to-transparent animate-spin-slow"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent animate-spin-slow"></div>
             </div>
             
             {/* Background Phone Icon - Non-overlapping */}
@@ -137,7 +134,7 @@ const Home = () => {
               </div>
               
               <div className="mt-8 mb-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
                   Apple Products
                 </h2>
                 <p className="text-gray-300 text-xl mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
@@ -147,15 +144,15 @@ const Home = () => {
                 {/* Featured Models */}
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center text-gray-300 group-hover:text-white transition-colors duration-300">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
                     <span className="font-medium">iPhone 15 Pro • From $999</span>
                   </div>
                   <div className="flex items-center text-gray-300 group-hover:text-white transition-colors duration-300">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse animation-delay-500"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse animation-delay-500"></div>
                     <span className="font-medium">iPad Pro • From $1,099</span>
                   </div>
                   <div className="flex items-center text-gray-300 group-hover:text-white transition-colors duration-300">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse animation-delay-1000"></div>
+                    <div className="w-2 h-2 bg-pink-400 rounded-full mr-3 animate-pulse animation-delay-1000"></div>
                     <span className="font-medium">AirPods Pro • $249</span>
                   </div>
                 </div>
@@ -183,11 +180,11 @@ const Home = () => {
             style={{ transitionDelay: '800ms' }}
             onClick={() => navigate('/samsung')}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-pink-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             {/* Animated border */}
             <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-l from-transparent via-white/20 to-transparent animate-spin-slow"></div>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-l from-transparent via-purple-400/20 to-transparent animate-spin-slow"></div>
             </div>
             
             {/* Background Phone Icon - Non-overlapping */}
@@ -206,7 +203,7 @@ const Home = () => {
               </div>
               
               <div className="mt-8 mb-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
                   Samsung Products
                 </h2>
                 <p className="text-gray-300 text-xl mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
@@ -216,15 +213,15 @@ const Home = () => {
                 {/* Featured Models */}
                 <div className="space-y-3 mb-8">
                   <div className="flex items-center text-gray-300 group-hover:text-white transition-colors duration-300">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3 animate-pulse"></div>
                     <span className="font-medium">Galaxy S24 Ultra • From $1,199</span>
                   </div>
                   <div className="flex items-center text-gray-300 group-hover:text-white transition-colors duration-300">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse animation-delay-500"></div>
+                    <div className="w-2 h-2 bg-pink-400 rounded-full mr-3 animate-pulse animation-delay-500"></div>
                     <span className="font-medium">Galaxy Tab S9 • From $799</span>
                   </div>
                   <div className="flex items-center text-gray-300 group-hover:text-white transition-colors duration-300">
-                    <div className="w-2 h-2 bg-white rounded-full mr-3 animate-pulse animation-delay-1000"></div>
+                    <div className="w-2 h-2 bg-orange-400 rounded-full mr-3 animate-pulse animation-delay-1000"></div>
                     <span className="font-medium">Galaxy Buds Pro • $199</span>
                   </div>
                 </div>

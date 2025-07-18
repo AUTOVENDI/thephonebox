@@ -67,13 +67,13 @@ const Apple = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-black via-gray-900 to-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Floating background elements */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white/15 rounded-full opacity-20 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-20 w-24 h-24 bg-white/10 rounded-full opacity-25 animate-float animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/12 rounded-full opacity-30 animate-pulse-slow animation-delay-1000"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-cyan-400/15 rounded-full opacity-20 animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-purple-400/10 rounded-full opacity-25 animate-float animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-400/12 rounded-full opacity-30 animate-pulse-slow animation-delay-1000"></div>
         
         {/* Moving light streaks */}
-        <div className="absolute top-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-slide-right"></div>
-        <div className="absolute bottom-1/3 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-white/20 to-transparent animate-slide-left animation-delay-3000"></div>
+        <div className="absolute top-1/3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-slide-right"></div>
+        <div className="absolute bottom-1/3 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-purple-400/20 to-transparent animate-slide-left animation-delay-3000"></div>
         
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -85,12 +85,12 @@ const Apple = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                 }`}
                 style={{ 
-                  fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+                  fontFamily: 'Poppins, sans-serif',
                   fontWeight: 900,
                   letterSpacing: '-0.02em'
                 }}
               >
-                <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent animate-gradient bg-300%">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400 bg-clip-text text-transparent animate-gradient bg-300%">
                 Apple Products
                 </span>
               </h1>
@@ -106,15 +106,15 @@ const Apple = () => {
                 
                 <div className="space-y-3 text-gray-300">
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
                     <span>Revolutionary A17 Pro chip technology</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-white rounded-full animate-ping animation-delay-500"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-ping animation-delay-500"></div>
                     <span>Professional camera systems</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-white rounded-full animate-ping animation-delay-1000"></div>
+                    <div className="w-2 h-2 bg-pink-400 rounded-full animate-ping animation-delay-1000"></div>
                     <span>Seamless ecosystem integration</span>
                   </div>
                 </div>
@@ -192,6 +192,7 @@ const Apple = () => {
               className={`text-3xl md:text-4xl font-bold text-white mb-6 transition-all duration-1000 delay-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
+              style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Our Apple Collection
             </h2>

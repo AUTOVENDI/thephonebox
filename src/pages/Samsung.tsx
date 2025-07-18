@@ -67,13 +67,13 @@ const Samsung = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-black via-gray-900 to-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Floating background elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 bg-white/15 rounded-full opacity-20 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-white/10 rounded-full opacity-25 animate-float animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-white/12 rounded-full opacity-30 animate-pulse-slow animation-delay-1000"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-purple-400/15 rounded-full opacity-20 animate-pulse-slow"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 bg-pink-400/10 rounded-full opacity-25 animate-float animation-delay-2000"></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-orange-400/12 rounded-full opacity-30 animate-pulse-slow animation-delay-1000"></div>
         
         {/* Moving light streaks */}
-        <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-slide-right animation-delay-1000"></div>
-        <div className="absolute bottom-1/4 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-white/20 to-transparent animate-slide-left animation-delay-4000"></div>
+        <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-slide-right animation-delay-1000"></div>
+        <div className="absolute bottom-1/4 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-pink-400/20 to-transparent animate-slide-left animation-delay-4000"></div>
         
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -85,12 +85,12 @@ const Samsung = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                 }`}
                 style={{ 
-                  fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+                  fontFamily: 'Poppins, sans-serif',
                   fontWeight: 900,
                   letterSpacing: '-0.02em'
                 }}
               >
-                <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent animate-gradient bg-300%">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-gradient bg-300%">
                 Samsung Products
                 </span>
               </h1>
@@ -200,6 +200,7 @@ const Samsung = () => {
               className={`text-3xl md:text-4xl font-bold text-white mb-6 transition-all duration-1000 delay-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
+              style={{ fontFamily: 'Poppins, sans-serif' }}
             >
               Our Samsung Collection
             </h2>
