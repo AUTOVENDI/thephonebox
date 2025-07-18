@@ -128,59 +128,23 @@ const Apple = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                 }`}
               >
-                {/* 3D Phone Container */}
-                <div className="relative w-80 h-80 flex items-center justify-center">
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute top-10 left-10 w-4 h-4 bg-white rounded-full animate-ping opacity-60"></div>
-                  <div className="absolute bottom-16 right-8 w-3 h-3 bg-white rounded-full animate-ping opacity-40 animation-delay-1000"></div>
-                  <div className="absolute top-20 right-12 w-2 h-2 bg-white rounded-full animate-ping opacity-50 animation-delay-2000"></div>
-                  
-                  {/* Main Phone Model - More Realistic iPhone 16 Pro Max */}
-                  <div className="relative group">
-                    <div 
-                      className="w-48 h-80 bg-gradient-to-b from-[#b0b2b5] via-[#6e6a6a] to-[#232324] rounded-[2.5rem] shadow-2xl border-[3px] border-[#88898a] relative overflow-hidden flex flex-col items-center"
-                      style={{
-                        animation: 'float-3d 6s ease-in-out infinite, rotateY 8s linear infinite',
-                        transformStyle: 'preserve-3d',
-                        boxShadow: '0 8px 32px 0 rgba(31,38,135,0.25)',
-                      }}
-                    >
-                      {/* Bezel */}
-                      <div className="absolute inset-0 rounded-[2.5rem] border-[6px] border-[#88898a] pointer-events-none"></div>
-                      {/* Screen */}
-                      <div className="absolute inset-2 rounded-[2.1rem] bg-black overflow-hidden flex flex-col items-center justify-between">
-                        {/* Dynamic Island */}
-                        <div className="mt-4 w-20 h-6 bg-[#232323] rounded-full mx-auto shadow-inner border border-[#444] flex items-center justify-center">
-                          <div className="w-2 h-2 bg-[#444] rounded-full mr-1"></div>
-                          <div className="w-3 h-2 bg-[#444] rounded-full"></div>
-                        </div>
-                        {/* Display (use a subtle wallpaper gradient) */}
-                        <div className="flex-1 w-full bg-gradient-to-br from-[#232324] via-[#35363a] to-[#1a1b1e] opacity-90"></div>
-                        {/* Home indicator */}
-                        <div className="mb-4 w-16 h-1.5 bg-gray-700 rounded-full mx-auto opacity-60"></div>
-                      </div>
-                      {/* Camera Bump (Pro Max style) */}
-                      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-                        <div className="w-7 h-7 bg-[#232324] rounded-full border-2 border-[#88898a] shadow-lg flex items-center justify-center">
-                          <div className="w-3 h-3 bg-[#6e6e73] rounded-full"></div>
-                        </div>
-                        <div className="w-7 h-7 bg-[#232324] rounded-full border-2 border-[#88898a] shadow-lg flex items-center justify-center">
-                          <div className="w-3 h-3 bg-[#6e6e73] rounded-full"></div>
-                        </div>
-                        <div className="w-7 h-7 bg-[#232324] rounded-full border-2 border-[#88898a] shadow-lg flex items-center justify-center">
-                          <div className="w-3 h-3 bg-[#6e6e73] rounded-full"></div>
-                        </div>
-                        {/* LiDAR sensor */}
-                        <div className="w-3 h-3 bg-[#444] rounded-full border border-[#88898a] mt-2"></div>
-                      </div>
-                      {/* Side Buttons */}
-                      <div className="absolute left-0 top-16 w-1.5 h-10 bg-[#88898a] rounded-r-full"></div>
-                      <div className="absolute left-0 top-32 w-1.5 h-16 bg-[#88898a] rounded-r-full"></div>
-                      <div className="absolute right-0 top-24 w-1.5 h-20 bg-[#88898a] rounded-l-full"></div>
-                    </div>
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-white/30 rounded-[2.5rem] blur-xl transform scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+                {/* Sketchfab 3D iPhone 16 Pro Max Model */}
+                <div className="w-full flex justify-center items-center" style={{ minHeight: 400 }}>
+                  <div className="sketchfab-embed-wrapper" style={{ width: '100%', maxWidth: 400, height: 400 }}>
+                    <iframe
+                      title="iPhone 16 Pro Max"
+                      frameBorder="0"
+                      allowFullScreen
+                      mozallowfullscreen="true"
+                      webkitallowfullscreen="true"
+                      allow="autoplay; fullscreen; xr-spatial-tracking"
+                      xr-spatial-tracking="true"
+                      execution-while-out-of-viewport="true"
+                      execution-while-not-rendered="true"
+                      web-share="true"
+                      src="https://sketchfab.com/models/41a071ae12794b668502f58d1e0fd1a3/embed"
+                      style={{ width: '100%', height: 400, borderRadius: 24 }}
+                    ></iframe>
                   </div>
                 </div>
               </div>
