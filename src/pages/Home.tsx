@@ -135,7 +135,7 @@ const Home = () => {
               
               <div className="mt-8 mb-8">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                  <span className="text-white">Apple Products</span>
+                  Apple Products
                 </h2>
                 <p className="text-gray-300 text-xl mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                   iPhone, iPad, AirPods, and more premium Apple devices with cutting-edge technology
@@ -238,7 +238,7 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-white via-gray-200 to-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left animate-gradient bg-300%"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left animate-gradient bg-300%"></div>
           </div>
         </div>
 
