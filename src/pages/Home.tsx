@@ -291,6 +291,18 @@ const Home = () => {
             Premium devices • Competitive prices • Exceptional service
           </p>
         </div>
+
+        {/* Contact Us Heading at the bottom */}
+        <div className={`mt-16 mb-8 text-center transition-all duration-1000 delay-1300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2" style={{ fontFamily: 'Satoshi, sans-serif' }}>
+            Contact Us
+          </h2>
+          <a href="mailto:ahyanahmed40@gmail.com" className="text-lg text-cyan-400 hover:underline">
+            ahyanahmed40@gmail.com
+          </a>
+        </div>
       </div>
     </div>
   );
