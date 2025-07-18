@@ -85,12 +85,12 @@ const Samsung = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
                 }`}
                 style={{ 
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'Satoshi, sans-serif',
                   fontWeight: 900,
                   letterSpacing: '-0.02em'
                 }}
               >
-                <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-gradient bg-300%">
+                <span className="text-white">
                 Samsung Products
                 </span>
               </h1>
@@ -200,7 +200,7 @@ const Samsung = () => {
               className={`text-3xl md:text-4xl font-bold text-white mb-6 transition-all duration-1000 delay-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
-              style={{ fontFamily: 'Poppins, sans-serif' }}
+              style={{ fontFamily: 'Satoshi, sans-serif' }}
             >
               Our Samsung Collection
             </h2>

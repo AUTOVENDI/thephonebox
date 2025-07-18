@@ -66,7 +66,7 @@ const Home = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ 
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'Satoshi, sans-serif',
               fontWeight: 700,
               letterSpacing: '-0.01em'
             }}
@@ -135,6 +135,7 @@ const Home = () => {
               
               <div className="mt-8 mb-8">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                   Apple Products
                 </h2>
                 <p className="text-gray-300 text-xl mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
@@ -204,6 +205,7 @@ const Home = () => {
               
               <div className="mt-8 mb-8">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                   Samsung Products
                 </h2>
                 <p className="text-gray-300 text-xl mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
