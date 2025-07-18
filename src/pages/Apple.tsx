@@ -136,45 +136,51 @@ const Apple = () => {
                   <div className="absolute bottom-16 right-8 w-3 h-3 bg-white rounded-full animate-ping opacity-40 animation-delay-1000"></div>
                   <div className="absolute top-20 right-12 w-2 h-2 bg-white rounded-full animate-ping opacity-50 animation-delay-2000"></div>
                   
-                  {/* Main Phone Model */}
+                  {/* Main Phone Model - More Realistic iPhone 16 Pro Max */}
                   <div className="relative group">
                     <div 
-                      className="w-48 h-80 bg-gradient-to-b from-gray-200 via-gray-300 to-white rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-700 hover:rotate-y-12"
+                      className="w-48 h-80 bg-gradient-to-b from-[#b0b2b5] via-[#6e6a6a] to-[#232324] rounded-[2.5rem] shadow-2xl border-[3px] border-[#88898a] relative overflow-hidden flex flex-col items-center"
                       style={{
                         animation: 'float-3d 6s ease-in-out infinite, rotateY 8s linear infinite',
-                        transformStyle: 'preserve-3d'
+                        transformStyle: 'preserve-3d',
+                        boxShadow: '0 8px 32px 0 rgba(31,38,135,0.25)',
                       }}
                     >
+                      {/* Bezel */}
+                      <div className="absolute inset-0 rounded-[2.5rem] border-[6px] border-[#88898a] pointer-events-none"></div>
                       {/* Screen */}
-                      <div className="absolute inset-2 bg-black rounded-2xl overflow-hidden">
-                        <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 opacity-80"></div>
-                        
+                      <div className="absolute inset-2 rounded-[2.1rem] bg-black overflow-hidden flex flex-col items-center justify-between">
                         {/* Dynamic Island */}
-                        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-16 h-6 bg-white rounded-full animate-pulse"></div>
-                        
-                        {/* App Icons Simulation */}
-                        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 grid grid-cols-4 gap-2">
-                          {[...Array(8)].map((_, i) => (
-                            <div key={i} className="w-3 h-3 bg-white/40 rounded-sm animate-pulse" style={{animationDelay: `${i * 200}ms`}}></div>
-                          ))}
+                        <div className="mt-4 w-20 h-6 bg-[#232323] rounded-full mx-auto shadow-inner border border-[#444] flex items-center justify-center">
+                          <div className="w-2 h-2 bg-[#444] rounded-full mr-1"></div>
+                          <div className="w-3 h-2 bg-[#444] rounded-full"></div>
                         </div>
+                        {/* Display (use a subtle wallpaper gradient) */}
+                        <div className="flex-1 w-full bg-gradient-to-br from-[#232324] via-[#35363a] to-[#1a1b1e] opacity-90"></div>
+                        {/* Home indicator */}
+                        <div className="mb-4 w-16 h-1.5 bg-gray-700 rounded-full mx-auto opacity-60"></div>
                       </div>
-                      
-                      {/* Camera Module */}
-                      <div className="absolute top-4 left-4 w-12 h-12 bg-gray-800 rounded-xl">
-                        <div className="absolute top-1 left-1 w-4 h-4 bg-white rounded-full animate-ping"></div>
-                        <div className="absolute top-1 right-1 w-4 h-4 bg-white rounded-full animate-ping animation-delay-500"></div>
-                        <div className="absolute bottom-1 left-1 w-4 h-4 bg-white rounded-full animate-ping animation-delay-1000"></div>
+                      {/* Camera Bump (Pro Max style) */}
+                      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                        <div className="w-7 h-7 bg-[#232324] rounded-full border-2 border-[#88898a] shadow-lg flex items-center justify-center">
+                          <div className="w-3 h-3 bg-[#6e6e73] rounded-full"></div>
+                        </div>
+                        <div className="w-7 h-7 bg-[#232324] rounded-full border-2 border-[#88898a] shadow-lg flex items-center justify-center">
+                          <div className="w-3 h-3 bg-[#6e6e73] rounded-full"></div>
+                        </div>
+                        <div className="w-7 h-7 bg-[#232324] rounded-full border-2 border-[#88898a] shadow-lg flex items-center justify-center">
+                          <div className="w-3 h-3 bg-[#6e6e73] rounded-full"></div>
+                        </div>
+                        {/* LiDAR sensor */}
+                        <div className="w-3 h-3 bg-[#444] rounded-full border border-[#88898a] mt-2"></div>
                       </div>
-                      
                       {/* Side Buttons */}
-                      <div className="absolute left-0 top-16 w-1 h-8 bg-gray-400 rounded-r"></div>
-                      <div className="absolute left-0 top-28 w-1 h-12 bg-gray-400 rounded-r"></div>
-                      <div className="absolute right-0 top-20 w-1 h-16 bg-gray-400 rounded-l"></div>
+                      <div className="absolute left-0 top-16 w-1.5 h-10 bg-[#88898a] rounded-r-full"></div>
+                      <div className="absolute left-0 top-32 w-1.5 h-16 bg-[#88898a] rounded-r-full"></div>
+                      <div className="absolute right-0 top-24 w-1.5 h-20 bg-[#88898a] rounded-l-full"></div>
                     </div>
-                    
                     {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-white/30 rounded-3xl blur-xl transform scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
+                    <div className="absolute inset-0 bg-white/30 rounded-[2.5rem] blur-xl transform scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
                   </div>
                 </div>
               </div>
