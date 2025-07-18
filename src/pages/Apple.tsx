@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Suspense } from 'react';
 
 const Apple = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,6 +64,12 @@ const Apple = () => {
       description: 'Your health and fitness companion'
     }
   ];
+
+  // Add the iPhone 16 GLB model viewer component
+  function IphoneModel() {
+    const gltf = useGLTF('/iphone_16_pro_max.glb');
+    return <primitive object={gltf.scene} scale={1.5} />;
+  }
 
   return (
     <div className="pt-16 min-h-screen">
@@ -128,24 +137,16 @@ const Apple = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                 }`}
               >
-                {/* Sketchfab 3D iPhone 16 Pro Max Model */}
-                <div className="w-full flex justify-center items-center" style={{ minHeight: 400 }}>
-                  <div className="sketchfab-embed-wrapper" style={{ width: '100%', maxWidth: 400, height: 400 }}>
-                    <iframe
-                      title="iPhone 16 Pro Max"
-                      frameBorder="0"
-                      allowFullScreen
-                      mozallowfullscreen="true"
-                      webkitallowfullscreen="true"
-                      allow="autoplay; fullscreen; xr-spatial-tracking"
-                      xr-spatial-tracking="true"
-                      execution-while-out-of-viewport="true"
-                      execution-while-not-rendered="true"
-                      web-share="true"
-                      src="https://sketchfab.com/models/41a071ae12794b668502f58d1e0fd1a3/embed"
-                      style={{ width: '100%', height: 400, borderRadius: 24 }}
-                    ></iframe>
-                  </div>
+                {/* Local GLB 3D iPhone 16 Pro Max Model */}
+                <div style={{ width: 400, height: 400 }}>
+                  <Canvas camera={{ position: [0, 0, 3] }}>
+                    <ambientLight intensity={0.7} />
+                    <directionalLight position={[10, 10, 5]} intensity={1} />
+                    <Suspense fallback={null}>
+                      <IphoneModel />
+                    </Suspense>
+                    <OrbitControls enablePan={false} />
+                  </Canvas>
                 </div>
               </div>
             </div>
