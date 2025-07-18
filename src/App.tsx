@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DropdownMenu from './components/DropdownMenu';
-import DropdownMenu from './components/DropdownMenu';
 import Home from './pages/Home';
 import Apple from './pages/Apple';
 import Samsung from './pages/Samsung';
