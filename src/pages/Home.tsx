@@ -17,7 +17,7 @@ const Home = () => {
     <div className="pt-16 min-h-screen relative overflow-hidden">
       {/* Animated Wave Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 animate-gradient bg-300%"></div>
+        <div className="absolute inset-0 bg-black"></div>
         <div 
           className="absolute top-0 left-0 w-full h-full opacity-40"
           style={{
@@ -71,8 +71,8 @@ const Home = () => {
               letterSpacing: '-0.01em'
             }}
           >
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 via-pink-500 to-orange-400 bg-clip-text text-transparent animate-gradient-smooth bg-400%">
-            Welcome to The Phone Box
+            <span className="text-white">
+              Welcome to The Phone Box
             </span>
           </h1>
           <p 
