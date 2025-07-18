@@ -135,7 +135,7 @@ const Home = () => {
               
               <div className="mt-8 mb-8">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 group-hover:text-gray-300 transition-all duration-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                  Apple Products
+                  <span className="text-white">Apple Products</span>
                 </h2>
                 <p className="text-gray-300 text-xl mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
                   iPhone, iPad, AirPods, and more premium Apple devices with cutting-edge technology
