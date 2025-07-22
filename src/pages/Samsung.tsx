@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
@@ -6,6 +7,7 @@ import { Suspense } from 'react';
 
 const Samsung = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -218,7 +220,13 @@ const Samsung = () => {
                     <span className="text-2xl font-bold text-white group-hover:animate-pulse">
                       {product.price}
                     </span>
-                    <button className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-110 hover:animate-bounce shadow-lg">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/samsung/product/${product.id}`);
+                      }}
+                      className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-110 hover:animate-bounce shadow-lg"
+                    >
                       View Details
                     </button>
                   </div>

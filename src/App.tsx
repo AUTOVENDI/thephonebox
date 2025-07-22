@@ -5,6 +5,7 @@ import DropdownMenu from './components/DropdownMenu';
 import Home from './pages/Home';
 import Apple from './pages/Apple';
 import Samsung from './pages/Samsung';
+import ProductPage from './components/ProductPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/apple" element={<Apple />} />
           <Route path="/samsung" element={<Samsung />} />
+          <Route path="/:brand/product/:productId" element={<ProductPage />} />
         </Routes>
       </div>
     </Router>

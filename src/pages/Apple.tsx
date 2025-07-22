@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
@@ -189,6 +190,7 @@ const Apple = () => {
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
                 }`}
                 style={{ transitionDelay: `${1100 + index * 100}ms` }}
+                onClick={() => navigate(`/apple/product/${product.id}`)}
               >
                 {/* Animated border effect */}
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -218,7 +220,13 @@ const Apple = () => {
                     <span className="text-2xl font-bold text-white group-hover:animate-pulse">
                       {product.price}
                     </span>
-                    <button className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-110 hover:animate-bounce shadow-lg">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/apple/product/${product.id}`);
+                      }}
+                      className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-110 hover:animate-bounce shadow-lg"
+                    >
                       View Details
                     </button>
                   </div>
