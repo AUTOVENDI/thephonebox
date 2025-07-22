@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Suspense } from 'react';
 
 const Samsung = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,6 +64,12 @@ const Samsung = () => {
       description: 'Smart watch with health monitoring'
     }
   ];
+
+  // Add the Samsung Galaxy S24 Ultra GLB model viewer component
+  function SamsungModel() {
+    const gltf = useGLTF('/samsung_galaxy_s24_ultra.glb');
+    return <primitive object={gltf.scene} scale={1.5} />;
+  }
 
   return (
     <div className="pt-16 min-h-screen">
@@ -128,62 +137,16 @@ const Samsung = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                 }`}
               >
-                {/* 3D Phone Container */}
-                <div className="relative w-80 h-80 flex items-center justify-center">
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute top-10 left-10 w-4 h-4 bg-white rounded-full animate-ping opacity-60"></div>
-                  <div className="absolute bottom-16 right-8 w-3 h-3 bg-white rounded-full animate-ping opacity-40 animation-delay-1000"></div>
-                  <div className="absolute top-20 right-12 w-2 h-2 bg-white rounded-full animate-ping opacity-50 animation-delay-2000"></div>
-                  
-                  {/* Main Phone Model */}
-                  <div className="relative group">
-                    <div 
-                      className="w-48 h-80 bg-gradient-to-b from-gray-200 via-gray-300 to-white rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-700 hover:rotate-y-12"
-                      style={{
-                        animation: 'float-3d 6s ease-in-out infinite, rotateY 8s linear infinite',
-                        transformStyle: 'preserve-3d'
-                      }}
-                    >
-                      {/* Screen */}
-                      <div className="absolute inset-2 bg-black rounded-2xl overflow-hidden">
-                        <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900 opacity-80"></div>
-                        
-                        {/* Punch Hole Camera */}
-                        <div className="absolute top-4 right-6 w-3 h-3 bg-white rounded-full animate-pulse"></div>
-                        
-                        {/* App Icons Simulation */}
-                        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 grid grid-cols-4 gap-2">
-                          {[...Array(8)].map((_, i) => (
-                            <div key={i} className="w-3 h-3 bg-white/40 rounded-sm animate-pulse" style={{animationDelay: `${i * 200}ms`}}></div>
-                          ))}
-                        </div>
-                        
-                        {/* Samsung UI Elements */}
-                        <div className="absolute top-8 left-4 right-4 h-1 bg-white/50 rounded-full animate-pulse"></div>
-                        <div className="absolute top-12 left-4 right-8 h-1 bg-white/40 rounded-full animate-pulse animation-delay-500"></div>
-                      </div>
-                      
-                      {/* Camera Module */}
-                      <div className="absolute top-4 left-4 w-14 h-16 bg-gray-800 rounded-2xl">
-                        <div className="absolute top-2 left-2 w-4 h-4 bg-white rounded-full animate-ping"></div>
-                        <div className="absolute top-2 right-2 w-4 h-4 bg-white rounded-full animate-ping animation-delay-300"></div>
-                        <div className="absolute bottom-2 left-2 w-4 h-4 bg-white rounded-full animate-ping animation-delay-600"></div>
-                        <div className="absolute bottom-2 right-2 w-2 h-2 bg-white rounded-full animate-ping animation-delay-900"></div>
-                      </div>
-                      
-                      {/* Side Buttons */}
-                      <div className="absolute left-0 top-16 w-1 h-8 bg-gray-400 rounded-r"></div>
-                      <div className="absolute left-0 top-28 w-1 h-12 bg-gray-400 rounded-r"></div>
-                      <div className="absolute right-0 top-20 w-1 h-16 bg-gray-400 rounded-l"></div>
-                      
-                      {/* S Pen Slot */}
-                      <div className="absolute bottom-8 right-2 w-1 h-8 bg-gray-600 rounded-full animate-ping"></div>
-                    </div>
-                    
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 bg-white/30 rounded-3xl blur-xl transform scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse"></div>
-                  </div>
+                {/* Local GLB 3D Samsung Galaxy S24 Ultra Model */}
+                <div style={{ width: 400, height: 400 }}>
+                  <Canvas camera={{ position: [0, 0, 3] }}>
+                    <ambientLight intensity={0.7} />
+                    <directionalLight position={[10, 10, 5]} intensity={1} />
+                    <Suspense fallback={null}>
+                      <SamsungModel />
+                    </Suspense>
+                    <OrbitControls enablePan={false} />
+                  </Canvas>
                 </div>
               </div>
             </div>
