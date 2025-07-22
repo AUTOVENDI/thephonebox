@@ -7,6 +7,7 @@ import { Suspense } from 'react';
 
 const Apple = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
