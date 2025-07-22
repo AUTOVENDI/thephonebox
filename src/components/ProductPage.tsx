@@ -128,6 +128,161 @@ const ProductPage = () => {
           ],
           averageRating: 4.5,
           totalReviews: 89
+        },
+        '3': {
+          id: 3,
+          name: 'iPad Pro',
+          price: '$1,099',
+          images: [
+            'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'The most advanced iPad ever with M2 chip, stunning Liquid Retina XDR display, and all-day battery life.',
+          features: [
+            'M2 chip with 8-core CPU',
+            '12.9-inch Liquid Retina XDR display',
+            'Apple Pencil (2nd generation) support',
+            'Thunderbolt / USB 4 port',
+            'Face ID for secure authentication',
+            'All-day battery life'
+          ],
+          specifications: {
+            'Display': '12.9-inch Liquid Retina XDR',
+            'Chip': 'Apple M2',
+            'Storage': '128GB, 256GB, 512GB, 1TB, 2TB',
+            'Camera': '12MP Wide and 10MP Ultra Wide',
+            'Battery': 'Up to 10 hours of surfing the web',
+            'Weight': '1.5 pounds (682 grams)'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'David K.',
+              rating: 5,
+              comment: 'Perfect for creative work. The display is absolutely stunning!',
+              date: '2024-01-13'
+            },
+            {
+              id: 2,
+              user: 'Maria S.',
+              rating: 4,
+              comment: 'Great for productivity and entertainment. Apple Pencil works flawlessly.',
+              date: '2024-01-09'
+            }
+          ],
+          averageRating: 4.8,
+          totalReviews: 124
+        },
+        '4': {
+          id: 4,
+          name: 'AirPods Pro',
+          price: '$249',
+          images: [
+            'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'AirPods Pro feature Active Noise Cancellation, Transparency mode, and Spatial Audio for an immersive listening experience.',
+          features: [
+            'Active Noise Cancellation',
+            'Transparency mode',
+            'Spatial Audio with dynamic head tracking',
+            'Adaptive EQ',
+            'Up to 6 hours listening time',
+            'MagSafe Charging Case'
+          ],
+          specifications: {
+            'Chip': 'Apple H2 chip',
+            'Battery Life': 'Up to 6 hours with ANC on',
+            'Case Battery': 'Up to 30 hours total',
+            'Connectivity': 'Bluetooth 5.3',
+            'Water Resistance': 'IPX4',
+            'Weight': '5.4 grams each'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Alex R.',
+              rating: 5,
+              comment: 'Best earbuds I\'ve ever owned. The noise cancellation is incredible.',
+              date: '2024-01-11'
+            }
+          ],
+          averageRating: 4.6,
+          totalReviews: 98
+        },
+        '5': {
+          id: 5,
+          name: 'MacBook Pro',
+          price: '$1,999',
+          images: [
+            'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'MacBook Pro with M3 Pro chip delivers exceptional performance for demanding workflows with up to 18 hours of battery life.',
+          features: [
+            'Apple M3 Pro chip',
+            '14-inch Liquid Retina XDR display',
+            'Up to 18 hours battery life',
+            'Three Thunderbolt 4 ports',
+            'MagSafe 3 charging',
+            'Studio-quality three-mic array'
+          ],
+          specifications: {
+            'Display': '14-inch Liquid Retina XDR',
+            'Chip': 'Apple M3 Pro',
+            'Memory': '18GB unified memory',
+            'Storage': '512GB SSD',
+            'Battery': 'Up to 18 hours',
+            'Weight': '3.5 pounds (1.6 kg)'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Jennifer L.',
+              rating: 5,
+              comment: 'Incredible performance for video editing. The M3 Pro chip is a beast!',
+              date: '2024-01-14'
+            }
+          ],
+          averageRating: 4.9,
+          totalReviews: 67
+        },
+        '6': {
+          id: 6,
+          name: 'Apple Watch',
+          price: '$399',
+          images: [
+            'https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'Apple Watch Series 9 with the new S9 chip, featuring a brighter display and advanced health monitoring.',
+          features: [
+            'S9 SiP with Neural Engine',
+            'Always-On Retina display',
+            'Blood Oxygen app',
+            'ECG app',
+            'Sleep tracking',
+            'Water resistant to 50 meters'
+          ],
+          specifications: {
+            'Display': 'Always-On Retina LTPO OLED',
+            'Chip': 'S9 SiP with Neural Engine',
+            'Storage': '64GB',
+            'Battery': 'Up to 18 hours',
+            'Connectivity': 'GPS + Cellular options',
+            'Case Size': '41mm or 45mm'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Michael T.',
+              rating: 4,
+              comment: 'Great fitness tracking and the always-on display is very convenient.',
+              date: '2024-01-10'
+            }
+          ],
+          averageRating: 4.4,
+          totalReviews: 156
         }
       },
       samsung: {
@@ -174,6 +329,191 @@ const ProductPage = () => {
           ],
           averageRating: 4.6,
           totalReviews: 203
+        },
+        '2': {
+          id: 2,
+          name: 'Galaxy S24',
+          price: '$799',
+          images: [
+            'https://images.pexels.com/photos/1292464/pexels-photo-1292464.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/1064162/pexels-photo-1064162.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'Galaxy S24 with advanced AI features, improved camera system, and all-day battery life.',
+          features: [
+            'Snapdragon 8 Gen 3 for Galaxy',
+            '50MP triple camera system',
+            'AI-powered photo editing',
+            '6.2-inch Dynamic AMOLED 2X',
+            'Armor Aluminum frame',
+            'Fast wireless charging'
+          ],
+          specifications: {
+            'Display': '6.2-inch Dynamic AMOLED 2X',
+            'Processor': 'Snapdragon 8 Gen 3 for Galaxy',
+            'Storage': '128GB, 256GB, 512GB',
+            'Camera': 'Triple 50MP system',
+            'Battery': '4000mAh with 25W charging',
+            'Material': 'Armor Aluminum'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Carlos M.',
+              rating: 4,
+              comment: 'Great performance and the AI features are really useful for daily tasks.',
+              date: '2024-01-12'
+            }
+          ],
+          averageRating: 4.3,
+          totalReviews: 145
+        },
+        '3': {
+          id: 3,
+          name: 'Galaxy Tab S9',
+          price: '$799',
+          images: [
+            'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'Ultra-thin Galaxy Tab S9 with stunning AMOLED display, S Pen included, and powerful performance.',
+          features: [
+            'Snapdragon 8 Gen 2 for Galaxy',
+            '11-inch Dynamic AMOLED 2X display',
+            'S Pen included',
+            'IP68 water resistance',
+            'DeX mode for desktop experience',
+            'All-day battery life'
+          ],
+          specifications: {
+            'Display': '11-inch Dynamic AMOLED 2X',
+            'Processor': 'Snapdragon 8 Gen 2 for Galaxy',
+            'Storage': '128GB, 256GB',
+            'Camera': '13MP rear, 12MP front',
+            'Battery': '8400mAh',
+            'Weight': '498 grams'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Rachel W.',
+              rating: 5,
+              comment: 'Perfect tablet for work and entertainment. The S Pen is incredibly responsive.',
+              date: '2024-01-13'
+            }
+          ],
+          averageRating: 4.7,
+          totalReviews: 89
+        },
+        '4': {
+          id: 4,
+          name: 'Galaxy Buds Pro',
+          price: '$199',
+          images: [
+            'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/1292464/pexels-photo-1292464.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'Premium wireless earbuds with intelligent Active Noise Cancellation and 360 Audio.',
+          features: [
+            'Intelligent Active Noise Cancellation',
+            '360 Audio with head tracking',
+            'Voice Detect technology',
+            'IPX7 water resistance',
+            'Up to 8 hours playback',
+            'Wireless charging case'
+          ],
+          specifications: {
+            'Driver': '11mm woofer + 6.5mm tweeter',
+            'Battery Life': 'Up to 8 hours (ANC off)',
+            'Case Battery': 'Up to 28 hours total',
+            'Connectivity': 'Bluetooth 5.3',
+            'Water Resistance': 'IPX7',
+            'Weight': '6.3 grams each'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Tom H.',
+              rating: 4,
+              comment: 'Great sound quality and the noise cancellation works well.',
+              date: '2024-01-09'
+            }
+          ],
+          averageRating: 4.2,
+          totalReviews: 112
+        },
+        '5': {
+          id: 5,
+          name: 'Galaxy Book',
+          price: '$999',
+          images: [
+            'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'Lightweight Galaxy Book with Intel processor, all-day battery, and seamless Galaxy ecosystem integration.',
+          features: [
+            'Intel Core i7 processor',
+            '15.6-inch Full HD display',
+            'All-day battery life',
+            'Galaxy ecosystem integration',
+            'Lightweight design',
+            'Fast charging'
+          ],
+          specifications: {
+            'Display': '15.6-inch Full HD',
+            'Processor': 'Intel Core i7-1355U',
+            'Memory': '16GB LPDDR4x',
+            'Storage': '512GB NVMe SSD',
+            'Battery': 'Up to 21 hours',
+            'Weight': '1.55 kg'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Sophie K.',
+              rating: 4,
+              comment: 'Great laptop for productivity. The integration with my Galaxy phone is seamless.',
+              date: '2024-01-08'
+            }
+          ],
+          averageRating: 4.1,
+          totalReviews: 76
+        },
+        '6': {
+          id: 6,
+          name: 'Galaxy Watch',
+          price: '$329',
+          images: [
+            'https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=800',
+            'https://images.pexels.com/photos/1292464/pexels-photo-1292464.jpeg?auto=compress&cs=tinysrgb&w=800'
+          ],
+          description: 'Smart watch with comprehensive health monitoring, GPS tracking, and long-lasting battery.',
+          features: [
+            'Exynos W930 processor',
+            'Super AMOLED display',
+            'Advanced health monitoring',
+            'GPS + LTE options',
+            'Sleep tracking',
+            'Water resistant (5ATM + IP68)'
+          ],
+          specifications: {
+            'Display': '1.4-inch Super AMOLED',
+            'Processor': 'Exynos W930',
+            'Storage': '16GB',
+            'Battery': 'Up to 40 hours',
+            'Connectivity': 'Bluetooth 5.3, Wi-Fi',
+            'Case Size': '44mm or 40mm'
+          },
+          reviews: [
+            {
+              id: 1,
+              user: 'Mark D.',
+              rating: 4,
+              comment: 'Excellent fitness tracking and the battery life is impressive.',
+              date: '2024-01-07'
+            }
+          ],
+          averageRating: 4.3,
+          totalReviews: 134
         }
       }
     };
