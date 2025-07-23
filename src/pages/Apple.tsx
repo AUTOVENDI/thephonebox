@@ -62,6 +62,27 @@ const Samsung = () => {
       icon: Watch,
       description: 'Smart watch with health monitoring'
     }
+  ];
+
+  const PhoneFallback = () => {
+    return (
+      <div className="relative w-32 h-56 bg-gradient-to-br from-gray-800 to-black rounded-3xl border-4 border-gray-600 shadow-2xl animate-pulse">
+        <div className="absolute inset-2 bg-gradient-to-br from-gray-900 to-black rounded-2xl">
+          <div className="p-4 space-y-2">
+            {/* Screen Content */}
+            <div className="space-y-2">
+              <div className="w-20 h-3 bg-white/30 rounded animate-pulse"></div>
+              <div className="w-16 h-2 bg-white/20 rounded animate-pulse"></div>
+              <div className="w-24 h-2 bg-white/15 rounded animate-pulse"></div>
+            </div>
+            
+            {/* App Icons */}
+            <div className="grid grid-cols-4 gap-1 mt-6">
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className="w-3 h-3 bg-white/20 rounded animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>
+              ))}
+            </div>
+            
             {/* Punch Hole Camera */}
                   <div className="w-16 h-2 bg-white/20 rounded mx-auto animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                   <div className="w-12 h-2 bg-white/10 rounded mx-auto animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -96,7 +117,7 @@ const Samsung = () => {
         <div className="absolute top-1/2 -right-6 w-1 h-1 bg-pink-400 rounded-full animate-bounce"></div>
       </div>
     );
-  }
+  };
 
   return (
     <div className="pt-16 min-h-screen">
@@ -167,27 +188,7 @@ const Samsung = () => {
                 {/* 3D Model Container Box */}
                 <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500">
                   <div style={{ width: 400, height: 400 }}>
-                    <Canvas camera={{ position: [0, 0, 3] }}>
-                      <ambientLight intensity={1.2} />
-                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
-                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
-                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={<PhoneFallback />}>
-                        <IPhoneModel />
-                      </Suspense>
-                      <OrbitControls enablePan={false} />
-                    </Canvas>
-                  </div>
-                    <Canvas camera={{ position: [0, 0, 3] }}>
-                      <ambientLight intensity={1.2} />
-                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
-                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
-                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={<PhoneFallback />}>
-                        <SamsungModel />
-                      </Suspense>
-                      <OrbitControls enablePan={false} />
-                    </Canvas>
+                    <PhoneFallback />
                   </div>
                 </div>
               </div>
