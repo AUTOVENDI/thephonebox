@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { Suspense } from 'react';
 
 const Samsung = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -67,25 +64,15 @@ const Samsung = () => {
     }
   ];
 
-  // Add the Samsung Galaxy S24 Ultra GLB model viewer component
-  function SamsungModel() {
-    try {
-      const gltf = useGLTF('/samsung_galaxy_s24_ultra.glb');
-      return <primitive object={gltf.scene} scale={1.5} />;
-    } catch (error) {
-      console.warn('Failed to load 3D model:', error);
-      return null;
-    }
-  }
-
-  // Fallback component when 3D model fails to load
-  function PhoneFallback() {
+  // Animated Samsung Phone Component
+  function AnimatedSamsungPhone() {
     return (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="text-center">
-          <Smartphone className="w-24 h-24 text-white mx-auto mb-4 animate-pulse" />
-          <p className="text-white text-lg">Galaxy S24 Ultra</p>
-          <p className="text-gray-300 text-sm">Innovation Unleashed</p>
+      <div className="relative w-64 h-96 mx-auto">
+        {/* Phone Body */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl border-4 border-gray-700 transform hover:scale-105 transition-all duration-500 hover:-rotate-3">
+          {/* Screen */}
+          <div className="absolute top-4 left-4 right-4 bottom-4 bg-black rounded-2xl overflow-hidden">
+            {/* Punch Hole Camera */}
         </div>
       </div>
     );
@@ -97,16 +84,46 @@ const Samsung = () => {
       <div className="bg-gradient-to-br from-black via-gray-900 to-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-10 right-10 w-32 h-32 bg-purple-400/15 rounded-full opacity-20 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-pink-400/10 rounded-full opacity-25 animate-float animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-orange-400/12 rounded-full opacity-30 animate-pulse-slow animation-delay-1000"></div>
-        
-        {/* Moving light streaks */}
-        <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-slide-right animation-delay-1000"></div>
-        <div className="absolute bottom-1/4 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-pink-400/20 to-transparent animate-slide-left animation-delay-4000"></div>
-        
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl mx-auto mb-4 flex items-center justify-center animate-pulse">
+                  <Smartphone className="w-8 h-8 text-black" />
+                </div>
+                <div className="space-y-2">
+                  <div className="w-20 h-2 bg-white/30 rounded mx-auto animate-pulse"></div>
+                  <div className="w-16 h-2 bg-white/20 rounded mx-auto animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="w-12 h-2 bg-white/10 rounded mx-auto animate-pulse" style={{ animationDelay: '1s' }}></div>
+                </div>
+              </div>
+            </div>
             
+            {/* Floating Elements */}
+            <div className="absolute top-20 left-6 w-3 h-3 bg-purple-400 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-20 right-6 w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-32 right-8 w-1 h-1 bg-orange-400 rounded-full animate-ping"></div>
+          </div>
+          
+          {/* Side Buttons */}
+          <div className="absolute left-0 top-20 w-1 h-8 bg-gray-600 rounded-r"></div>
+          <div className="absolute left-0 top-32 w-1 h-6 bg-gray-600 rounded-r"></div>
+          <div className="absolute left-0 top-40 w-1 h-6 bg-gray-600 rounded-r"></div>
+          <div className="absolute right-0 top-24 w-1 h-12 bg-gray-600 rounded-l"></div>
+          
+          {/* Camera Module */}
+          <div className="absolute top-6 left-6 w-16 h-12 bg-gray-800 rounded-xl border-2 border-gray-600">
+            <div className="absolute top-1 left-1 w-3 h-3 bg-gray-700 rounded-full"></div>
+            <div className="absolute top-1 left-6 w-3 h-3 bg-gray-700 rounded-full"></div>
+            <div className="absolute top-1 right-1 w-3 h-3 bg-gray-700 rounded-full"></div>
+            <div className="absolute bottom-1 left-3 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+        
+        {/* Floating Particles */}
+        <div className="absolute -top-4 -left-4 w-2 h-2 bg-purple-400 rounded-full animate-ping"></div>
+        <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-pink-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 -right-6 w-1 h-1 bg-orange-400 rounded-full animate-bounce"></div>
+      </div>
+    );
+  }
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <h1 
@@ -165,7 +182,7 @@ const Samsung = () => {
                       <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
                       <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
                       <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={<PhoneFallback />}>
+                      <Suspense fallback={<SamsungPhoneFallback />}>
                         <SamsungModel />
                       </Suspense>
                       <OrbitControls enablePan={false} />
