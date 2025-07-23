@@ -69,8 +69,26 @@ const Apple = () => {
 
   // Add the iPhone 16 GLB model viewer component
   function IphoneModel() {
-    const gltf = useGLTF('/iphone_16_pro_max.glb');
-    return <primitive object={gltf.scene} scale={1.5} />;
+    try {
+      const gltf = useGLTF('/iphone_16_pro_max.glb');
+      return <primitive object={gltf.scene} scale={1.5} />;
+    } catch (error) {
+      console.warn('Failed to load 3D model:', error);
+      return null;
+    }
+  }
+
+  // Fallback component when 3D model fails to load
+  function PhoneFallback() {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="text-center">
+          <Smartphone className="w-24 h-24 text-white mx-auto mb-4 animate-pulse" />
+          <p className="text-white text-lg">iPhone 15 Pro</p>
+          <p className="text-gray-300 text-sm">Premium Design</p>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -147,7 +165,7 @@ const Apple = () => {
                       <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
                       <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
                       <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={null}>
+                      <Suspense fallback={<PhoneFallback />}>
                         <IphoneModel />
                       </Suspense>
                       <OrbitControls enablePan={false} />
