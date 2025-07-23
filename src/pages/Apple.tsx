@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
 
 const Samsung = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,77 +61,28 @@ const Samsung = () => {
     }
   ];
 
-  const PhoneFallback = () => {
-    return (
-      <div className="relative w-32 h-56 bg-gradient-to-br from-gray-800 to-black rounded-3xl border-4 border-gray-600 shadow-2xl animate-pulse">
-        <div className="absolute inset-2 bg-gradient-to-br from-gray-900 to-black rounded-2xl">
-          <div className="p-4 space-y-2">
-            {/* Screen Content */}
-            <div className="space-y-2">
-              <div className="w-20 h-3 bg-white/30 rounded animate-pulse"></div>
-              <div className="w-16 h-2 bg-white/20 rounded animate-pulse"></div>
-              <div className="w-24 h-2 bg-white/15 rounded animate-pulse"></div>
-            </div>
-            
-            {/* App Icons */}
-            <div className="grid grid-cols-4 gap-1 mt-6">
-              {[...Array(8)].map((_, i) => (
-                <div key={i} className="w-3 h-3 bg-white/20 rounded animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>
-              ))}
-            </div>
-            
-            {/* Punch Hole Camera */}
-                  <div className="w-16 h-2 bg-white/20 rounded mx-auto animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="w-12 h-2 bg-white/10 rounded mx-auto animate-pulse" style={{ animationDelay: '1s' }}></div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute top-20 left-6 w-3 h-3 bg-cyan-400 rounded-full animate-bounce"></div>
-            <div className="absolute bottom-20 right-6 w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-32 right-8 w-1 h-1 bg-pink-400 rounded-full animate-ping"></div>
-          </div>
-          
-          {/* Side Buttons */}
-          <div className="absolute left-0 top-20 w-1 h-8 bg-gray-600 rounded-r"></div>
-          <div className="absolute left-0 top-32 w-1 h-6 bg-gray-600 rounded-r"></div>
-          <div className="absolute left-0 top-40 w-1 h-6 bg-gray-600 rounded-r"></div>
-          <div className="absolute right-0 top-24 w-1 h-12 bg-gray-600 rounded-l"></div>
-          
-          {/* Camera Module */}
-          <div className="absolute top-6 left-6 w-12 h-12 bg-gray-800 rounded-xl border-2 border-gray-600">
-            <div className="absolute top-1 left-1 w-3 h-3 bg-gray-700 rounded-full"></div>
-            <div className="absolute top-1 right-1 w-3 h-3 bg-gray-700 rounded-full"></div>
-            <div className="absolute bottom-1 left-1 w-3 h-3 bg-gray-700 rounded-full"></div>
-            <div className="absolute bottom-1 right-1 w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-          </div>
-        </div>
-        
-        {/* Floating Particles */}
-        <div className="absolute -top-4 -left-4 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
-        <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/2 -right-6 w-1 h-1 bg-pink-400 rounded-full animate-bounce"></div>
-      </div>
-    );
-  };
+  // Animated Samsung Phone Component
+  function AnimatedSamsungPhone() {
+  }
 
   return (
     <div className="pt-16 min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-black via-gray-900 to-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Floating background elements */}
-        <div className="absolute top-10 right-10 w-32 h-32 bg-purple-400/15 rounded-full opacity-20 animate-pulse-slow"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-pink-400/10 rounded-full opacity-25 animate-float animation-delay-2000"></div>
-        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-orange-400/12 rounded-full opacity-30 animate-pulse-slow animation-delay-1000"></div>
-        
-        {/* Moving light streaks */}
-        <div className="absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-slide-right animation-delay-1000"></div>
-        <div className="absolute bottom-1/4 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-pink-400/20 to-transparent animate-slide-left animation-delay-4000"></div>
-        
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+      <div className="relative w-64 h-96 mx-auto">
+        {/* Phone Body */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl border-4 border-gray-700 transform hover:scale-105 transition-all duration-500 hover:-rotate-3">
+          {/* Screen */}
+          <div className="absolute top-4 left-4 right-4 bottom-4 bg-black rounded-2xl overflow-hidden">
+            {/* Punch Hole Camera */}
+                <div className="w-16 h-16 bg-white rounded-2xl mx-auto mb-4 flex items-center justify-center animate-pulse">
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="text-center">
+          <Smartphone className="w-24 h-24 text-white mx-auto mb-4 animate-pulse" />
+          <p className="text-white text-lg">iPhone 15 Pro</p>
+          <p className="text-gray-300 text-sm">Think Different</p>
+        </div>
+      </div>
+    );
+  }
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <h1 
@@ -188,7 +136,25 @@ const Samsung = () => {
                 {/* 3D Model Container Box */}
                 <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500">
                   <div style={{ width: 400, height: 400 }}>
-                    <PhoneFallback />
+                    <Canvas camera={{ position: [0, 0, 3] }}>
+                      <ambientLight intensity={1.2} />
+                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
+                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
+                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
+                      <Suspense fallback={<PhoneFallback />}>
+                        <IPhoneModel />
+                      </Suspense>
+                      <OrbitControls enablePan={false} />
+                    </Canvas>
+                      <ambientLight intensity={1.2} />
+                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
+                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
+                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
+                      <Suspense fallback={<SamsungPhoneFallback />}>
+                        <SamsungModel />
+                      </Suspense>
+                      <OrbitControls enablePan={false} />
+                    </Canvas>
                   </div>
                 </div>
               </div>
