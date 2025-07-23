@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { Suspense } from 'react';
 
 const Apple = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -67,26 +64,56 @@ const Apple = () => {
     }
   ];
 
-  // Add the iPhone 16 GLB model viewer component
-  function IphoneModel() {
-    try {
-      const gltf = useGLTF('/iphone_16_pro_max.glb');
-      return <primitive object={gltf.scene} scale={1.5} />;
-    } catch (error) {
-      console.warn('Failed to load 3D model:', error);
-      return null;
-    }
-  }
-
-  // Fallback component when 3D model fails to load
-  function PhoneFallback() {
+  // Animated Phone Component
+  function AnimatedPhone() {
     return (
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="text-center">
-          <Smartphone className="w-24 h-24 text-white mx-auto mb-4 animate-pulse" />
-          <p className="text-white text-lg">iPhone 15 Pro</p>
-          <p className="text-gray-300 text-sm">Premium Design</p>
+      <div className="relative w-64 h-96 mx-auto">
+        {/* Phone Body */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl border-4 border-gray-700 transform hover:scale-105 transition-all duration-500 hover:rotate-3">
+          {/* Screen */}
+          <div className="absolute top-4 left-4 right-4 bottom-4 bg-black rounded-2xl overflow-hidden">
+            {/* Dynamic Island */}
+            <div className="absolute top-3 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-gray-900 rounded-full"></div>
+            
+            {/* Screen Content */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white rounded-2xl mx-auto mb-4 flex items-center justify-center animate-pulse">
+                  <Smartphone className="w-8 h-8 text-black" />
+                </div>
+                <div className="space-y-2">
+                  <div className="w-20 h-2 bg-white/30 rounded mx-auto animate-pulse"></div>
+                  <div className="w-16 h-2 bg-white/20 rounded mx-auto animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="w-12 h-2 bg-white/10 rounded mx-auto animate-pulse" style={{ animationDelay: '1s' }}></div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Floating Elements */}
+            <div className="absolute top-20 left-6 w-3 h-3 bg-cyan-400 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-20 right-6 w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-32 right-8 w-1 h-1 bg-pink-400 rounded-full animate-ping"></div>
+          </div>
+          
+          {/* Side Buttons */}
+          <div className="absolute left-0 top-20 w-1 h-8 bg-gray-600 rounded-r"></div>
+          <div className="absolute left-0 top-32 w-1 h-6 bg-gray-600 rounded-r"></div>
+          <div className="absolute left-0 top-40 w-1 h-6 bg-gray-600 rounded-r"></div>
+          <div className="absolute right-0 top-24 w-1 h-12 bg-gray-600 rounded-l"></div>
+          
+          {/* Camera Module */}
+          <div className="absolute top-6 left-6 w-12 h-12 bg-gray-800 rounded-xl border-2 border-gray-600">
+            <div className="absolute top-1 left-1 w-3 h-3 bg-gray-700 rounded-full"></div>
+            <div className="absolute top-1 right-1 w-3 h-3 bg-gray-700 rounded-full"></div>
+            <div className="absolute bottom-1 left-1 w-3 h-3 bg-gray-700 rounded-full"></div>
+            <div className="absolute bottom-1 right-1 w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
+          </div>
         </div>
+        
+        {/* Floating Particles */}
+        <div className="absolute -top-4 -left-4 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
+        <div className="absolute -bottom-4 -right-4 w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 -right-6 w-1 h-1 bg-pink-400 rounded-full animate-bounce"></div>
       </div>
     );
   }
@@ -157,20 +184,9 @@ const Apple = () => {
                   isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                 }`}
               >
-                {/* 3D Model Container Box */}
+                {/* Phone Model Container */}
                 <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500">
-                  <div style={{ width: 400, height: 400 }}>
-                    <Canvas camera={{ position: [0, 0, 3] }}>
-                      <ambientLight intensity={1.2} />
-                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
-                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
-                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={<PhoneFallback />}>
-                        <IphoneModel />
-                      </Suspense>
-                      <OrbitControls enablePan={false} />
-                    </Canvas>
-                  </div>
+                  <AnimatedPhone />
                 </div>
               </div>
             </div>
