@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Suspense } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
 import { IPhoneModel } from '../components/IPhoneModel';
 import { PhoneFallback } from '../components/PhoneFallback';
