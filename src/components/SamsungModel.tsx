@@ -40,4 +40,4 @@ export function SamsungModel() {
   );
 }
 
-useGLTF.preload('/samsung_galaxy_s24_ultra_v2.glb'); 
+useGLTF.preload('/samsung_galaxy_s24_ultra_V2.glb');  

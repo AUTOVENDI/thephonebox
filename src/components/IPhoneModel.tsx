@@ -40,4 +40,4 @@ export function IPhoneModel() {
   );
 }
 
-useGLTF.preload('/iphone_16_pro_max_v2.glb'); 
+useGLTF.preload('/iphone_16_pro_max_V2.glb'); 
