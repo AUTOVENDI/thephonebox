@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 export function SamsungModel() {
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF('/samsung_galaxy_s24_ultra_v2.glb') as any;
+  const { nodes, materials } = useGLTF('/samsung_galaxy_s24_ultra_V2.glb') as any;
 
   useFrame((state) => {
     if (group.current) {
