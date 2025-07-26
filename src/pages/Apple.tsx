@@ -1,5 +1,12 @@
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Suspense } from '@react-three/drei';
+import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
+import { IPhoneModel } from '../components/IPhoneModel';
+import { PhoneFallback } from '../components/PhoneFallback';
 
-const Samsung = () => {
+const Apple = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -13,76 +20,61 @@ const Samsung = () => {
   const products = [
     {
       id: 1,
-      name: 'Galaxy S24 Ultra',
+      name: 'iPhone 16 Pro Max',
       price: '$1,199',
-      image: 'https://images.pexels.com/photos/1064162/pexels-photo-1064162.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/1647976/pexels-photo-1647976.jpeg?auto=compress&cs=tinysrgb&w=400',
       icon: Smartphone,
-      description: 'The most advanced Galaxy smartphone with S Pen'
+      description: 'The most advanced iPhone with A18 Pro chip'
     },
     {
       id: 2,
-      name: 'Galaxy S24',
-      price: '$799',
-      image: 'https://images.pexels.com/photos/1292464/pexels-photo-1292464.jpeg?auto=compress&cs=tinysrgb&w=400',
+      name: 'iPhone 16 Pro',
+      price: '$999',
+      image: 'https://images.pexels.com/photos/1647976/pexels-photo-1647976.jpeg?auto=compress&cs=tinysrgb&w=400',
       icon: Smartphone,
-      description: 'Premium Galaxy experience with AI features'
+      description: 'Premium iPhone experience with Pro features'
     },
     {
       id: 3,
-      name: 'Galaxy Tab S9',
-      price: '$799',
+      name: 'iPad Pro',
+      price: '$1,099',
       image: 'https://images.pexels.com/photos/1334597/pexels-photo-1334597.jpeg?auto=compress&cs=tinysrgb&w=400',
       icon: Tablet,
-      description: 'Ultra-thin tablet with stunning display'
+      description: 'Ultra-thin tablet with M4 chip'
     },
     {
       id: 4,
-      name: 'Galaxy Buds Pro',
-      price: '$199',
+      name: 'AirPods Pro',
+      price: '$249',
       image: 'https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=400',
       icon: Headphones,
       description: 'Premium wireless earbuds with ANC'
     },
     {
       id: 5,
-      name: 'Galaxy Book',
-      price: '$999',
+      name: 'MacBook Pro',
+      price: '$1,999',
       image: 'https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?auto=compress&cs=tinysrgb&w=400',
       icon: Laptop,
-      description: 'Lightweight laptop for productivity'
+      description: 'Powerful laptop for professionals'
     },
     {
       id: 6,
-      name: 'Galaxy Watch',
-      price: '$329',
+      name: 'Apple Watch',
+      price: '$399',
       image: 'https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=400',
       icon: Watch,
       description: 'Smart watch with health monitoring'
     }
-  ];
-
-  // Animated Samsung Phone Component
-  function AnimatedSamsungPhone() {
-  }
+    ];
 
   return (
     <div className="pt-16 min-h-screen">
-      <div className="relative w-64 h-96 mx-auto">
-        {/* Phone Body */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl border-4 border-gray-700 transform hover:scale-105 transition-all duration-500 hover:-rotate-3">
-          {/* Screen */}
-          <div className="absolute top-4 left-4 right-4 bottom-4 bg-black rounded-2xl overflow-hidden">
-            {/* Punch Hole Camera */}
-                <div className="w-16 h-16 bg-white rounded-2xl mx-auto mb-4 flex items-center justify-center animate-pulse">
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="text-center">
-          <Smartphone className="w-24 h-24 text-white mx-auto mb-4 animate-pulse" />
-          <p className="text-white text-lg">iPhone 15 Pro</p>
-          <p className="text-gray-300 text-sm">Think Different</p>
-        </div>
-      </div>
-    );
-  }
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-black via-gray-900 to-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Floating background elements */}
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <h1 
@@ -96,7 +88,7 @@ const Samsung = () => {
                 }}
               >
                 <span className="text-white">
-                Samsung Products
+                Apple Products
                 </span>
               </h1>
               
@@ -112,7 +104,7 @@ const Samsung = () => {
                 <div className="space-y-3 text-gray-300">
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-white rounded-full animate-ping"></div>
-                    <span>Advanced AI-powered features</span>
+                    <span>Advanced A18 Pro chip</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-white rounded-full animate-ping animation-delay-500"></div>
@@ -120,7 +112,7 @@ const Samsung = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-white rounded-full animate-ping animation-delay-1000"></div>
-                    <span>S Pen productivity tools</span>
+                    <span>Pro camera system</span>
                   </div>
                 </div>
               </div>
@@ -146,15 +138,6 @@ const Samsung = () => {
                       </Suspense>
                       <OrbitControls enablePan={false} />
                     </Canvas>
-                      <ambientLight intensity={1.2} />
-                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
-                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
-                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={<SamsungPhoneFallback />}>
-                        <SamsungModel />
-                      </Suspense>
-                      <OrbitControls enablePan={false} />
-                    </Canvas>
                   </div>
                 </div>
               </div>
@@ -174,14 +157,14 @@ const Samsung = () => {
               }`}
               style={{ fontFamily: 'Satoshi, sans-serif' }}
             >
-              Our Samsung Collection
+              Our Apple Collection
             </h2>
             <p 
               className={`text-lg text-gray-400 max-w-2xl mx-auto transition-all duration-1000 delay-900 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
             >
-              Explore Samsung's innovative technology and cutting-edge devices
+              Explore Apple's innovative technology and cutting-edge devices
             </p>
           </div>
 
@@ -226,7 +209,7 @@ const Samsung = () => {
                     <button 
                       onClick={(e) => {
                         e.stopPropagation();
-                        navigate(`/samsung/product/${product.id}`);
+                        navigate(`/apple/product/${product.id}`);
                       }}
                       className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-110 hover:animate-bounce shadow-lg"
                     >
@@ -245,4 +228,4 @@ const Samsung = () => {
   );
 };
 
-export default Samsung;
+export default Apple;

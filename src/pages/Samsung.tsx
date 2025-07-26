@@ -1,4 +1,12 @@
 
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Suspense } from '@react-three/drei';
+import { Smartphone, Tablet, Headphones, Laptop, Watch } from 'lucide-react';
+import { SamsungModel } from '../components/SamsungModel';
+import { PhoneFallback } from '../components/PhoneFallback';
+
 const Samsung = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
@@ -55,21 +63,11 @@ const Samsung = () => {
       id: 6,
       name: 'Galaxy Watch',
       price: '$329',
-      <div className="relative w-64 h-96 mx-auto">
-        {/* Phone Body */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl border-4 border-gray-700 transform hover:scale-105 transition-all duration-500 hover:-rotate-3">
-          {/* Screen */}
-          <div className="absolute top-4 left-4 right-4 bottom-4 bg-black rounded-2xl overflow-hidden">
-            {/* Punch Hole Camera */}
-      <div className="w-full h-full flex items-center justify-center">
-        <div className="text-center">
-          <Smartphone className="w-24 h-24 text-white mx-auto mb-4 animate-pulse" />
-          <p className="text-white text-lg">Galaxy S24 Ultra</p>
-          <p className="text-gray-300 text-sm">Innovation Unleashed</p>
-        </div>
-      </div>
-    );
-  }
+      image: 'https://images.pexels.com/photos/393047/pexels-photo-393047.jpeg?auto=compress&cs=tinysrgb&w=400',
+      icon: Watch,
+      description: 'Smart watch with health monitoring'
+    }
+    ];
 
   return (
     <div className="pt-16 min-h-screen">
@@ -130,17 +128,19 @@ const Samsung = () => {
               >
                 {/* 3D Model Container Box */}
                 <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500">
-                  <AnimatedSamsungPhone />
+                  <div style={{ width: 400, height: 400 }}>
                     <Canvas camera={{ position: [0, 0, 3] }}>
                       <ambientLight intensity={1.2} />
                       <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
                       <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
                       <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
-                      <Suspense fallback={<SamsungPhoneFallback />}>
+                      <Suspense fallback={<PhoneFallback />}>
                         <SamsungModel />
                       </Suspense>
                       <OrbitControls enablePan={false} />
                     </Canvas>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -230,6 +230,3 @@ const Samsung = () => {
 };
 
 export default Samsung;
-    }
-  ]
-}
