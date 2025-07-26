@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 export function IPhoneModel() {
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF('/iphone_16_pro_max.glb') as any;
+  const { nodes, materials } = useGLTF('/iphone_16_pro_max_v2.glb') as any;
 
   useFrame((state) => {
     if (group.current) {
@@ -40,4 +40,4 @@ export function IPhoneModel() {
   );
 }
 
-useGLTF.preload('/iphone_16_pro_max.glb'); 
+useGLTF.preload('/iphone_16_pro_max_v2.glb'); 
