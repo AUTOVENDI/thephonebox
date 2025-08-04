@@ -143,7 +143,7 @@ const Samsung = () => {
                   <div style={{ width: 400, height: 400 }}>
                     <Suspense fallback={<PhoneFallback />}>
                       <Canvas 
-                        camera={{ position: [0, 0, 4], fov: 45 }}
+                        camera={{ position: [0, 0, 6], fov: 45 }}
                         style={{ background: 'transparent' }}
                       >
                         <ambientLight intensity={0.5} />
