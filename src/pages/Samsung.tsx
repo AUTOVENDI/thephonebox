@@ -9,6 +9,15 @@ import { PhoneFallback } from '../components/PhoneFallback';
 
 extend({ OrbitControls });
 
+// Three.js fallback component for inside Canvas
+function CanvasFallback() {
+  return (
+    <mesh>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="gray" />
+    </mesh>
+  );
+}
 
 
 const Samsung = () => {
@@ -133,24 +142,26 @@ const Samsung = () => {
                 {/* 3D Model Container Box */}
                 <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500">
                   <div style={{ width: 400, height: 400 }}>
-                                         <Canvas 
-                       camera={{ position: [0, 0, 4], fov: 45 }}
-                       style={{ background: 'transparent' }}
-                     >
-                       <ambientLight intensity={0.5} />
-                       <spotLight 
-                         position={[10, 10, 10]} 
-                         angle={0.15} 
-                         penumbra={1} 
-                         intensity={1}
-                         castShadow
-                       />
-                       <pointLight position={[-10, -10, -10]} intensity={0.5} />
-                       <Suspense fallback={<PhoneFallback />}>
-                         <SamsungModel />
-                        <OrbitControls enableZoom={false} enablePan={false} />
-                       </Suspense>
-                     </Canvas>
+                     <Suspense fallback={<PhoneFallback />}>
+                       <Canvas 
+                         camera={{ position: [0, 0, 4], fov: 45 }}
+                         style={{ background: 'transparent' }}
+                       >
+                         <ambientLight intensity={0.5} />
+                         <spotLight 
+                           position={[10, 10, 10]} 
+                           angle={0.15} 
+                           penumbra={1} 
+                           intensity={1}
+                           castShadow
+                         />
+                         <pointLight position={[-10, -10, -10]} intensity={0.5} />
+                         <Suspense fallback={<CanvasFallback />}>
+                           <SamsungModel />
+                         </Suspense>
+                         <OrbitControls enableZoom={false} enablePan={false} />
+                       </Canvas>
+                     </Suspense>
                   </div>
                 </div>
               </div>
