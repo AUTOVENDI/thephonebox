@@ -144,6 +144,7 @@ const Samsung = () => {
                       <pointLight position={[-10, -10, -10]} intensity={0.5} />
                       <Suspense fallback={<PhoneFallback />}>
                         <SamsungModel />
+                       <OrbitControls enableZoom={false} enablePan={false} />
                       </Suspense>
                     </Canvas>
                   </div>
