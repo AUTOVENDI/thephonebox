@@ -1,43 +1,39 @@
 import React from 'react';
-import { useGLTF } from '@react-three/drei';
+import { useGLTF, PresentationControls, Float } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import * as THREE from 'three';
 
 export function SamsungModel() {
   const group = useRef<THREE.Group>(null);
-  const { nodes, materials } = useGLTF('/samsung_galaxy_s24_ultra_V2.glb') as any;
+  const { scene } = useGLTF('/samsung_galaxy_s24_ultra_V2.glb');
 
   useFrame((state) => {
     if (group.current) {
       // Gentle rotation animation
-      group.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-      group.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.05;
+      group.current.rotation.y = state.clock.elapsedTime * 0.2;
     }
   });
 
   return (
-    <group ref={group} dispose={null}>
-      <group scale={[1, 1, 1]} position={[0, 0, 0]}>
-        {/* Render all meshes from the GLB file */}
-        {Object.keys(nodes).map((key) => {
-          const node = nodes[key];
-          if (node && node.geometry && node.material) {
-            return (
-              <mesh
-                key={key}
-                geometry={node.geometry}
-                material={node.material}
-                castShadow
-                receiveShadow
-              />
-            );
-          }
-          return null;
-        })}
-      </group>
-    </group>
+    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
+      <PresentationControls
+        global
+        rotation={[0.13, 0.1, 0]}
+        polar={[-0.4, 0.2]}
+        azimuth={[-1, 0.75]}
+        config={{ mass: 2, tension: 400 }}
+        snap={{ mass: 4, tension: 400 }}
+      >
+        <group ref={group} dispose={null}>
+          <primitive 
+            object={scene} 
+            scale={[2, 2, 2]} 
+            position={[0, -0.5, 0]}
+            rotation={[0, 0, 0]}
+          />
+        </group>
+      </PresentationControls>
+    </Float>
   );
 }
-
-useGLTF.preload('/samsung_galaxy_s24_ultra_V2.glb');  

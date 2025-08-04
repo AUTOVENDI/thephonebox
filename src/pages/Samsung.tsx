@@ -129,15 +129,22 @@ const Samsung = () => {
                 {/* 3D Model Container Box */}
                 <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-2xl hover:border-white/40 transition-all duration-500">
                   <div style={{ width: 400, height: 400 }}>
-                    <Canvas camera={{ position: [0, 0, 3] }}>
-                      <ambientLight intensity={1.2} />
-                      <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
-                      <directionalLight position={[-10, -10, -5]} intensity={1.5} color="#f0f0f0" />
-                      <pointLight position={[0, 0, 10]} intensity={1} color="#ffffff" />
+                    <Canvas 
+                      camera={{ position: [0, 0, 4], fov: 45 }}
+                      style={{ background: 'transparent' }}
+                    >
+                      <ambientLight intensity={0.5} />
+                      <spotLight 
+                        position={[10, 10, 10]} 
+                        angle={0.15} 
+                        penumbra={1} 
+                        intensity={1}
+                        castShadow
+                      />
+                      <pointLight position={[-10, -10, -10]} intensity={0.5} />
                       <Suspense fallback={<PhoneFallback />}>
                         <SamsungModel />
                       </Suspense>
-                      <OrbitControls enablePan={false} />
                     </Canvas>
                   </div>
                 </div>
